@@ -1,4 +1,4 @@
-# Guild-Systems
+# Guild-Systems 
 
 Hi, I'm Nazox, here I will post the guild systems, there are quite a few things I want to re trace.
 1- I am not the author or creator of the systems, I simply compiled the incomplete systems from various bases and finished coding, fixing, testing etc. I am not a dev nor do I have a lot of knowledge but I have been able to learn quite a bit working on this, so the code may not be very “clean”, it also keeps a lot of original code, as I mentioned, I have simply fixed or added the things that were missing.
