@@ -8,4 +8,4 @@ Hi, I'm Nazox, here I will post the guild systems, there are quite a few things 
 
 Everything will be explained in the best possible way, and individually, so that you do not have to add a large amount of code in a single system, so it will be “divided”. Remember that if I add a lot of code, it is so that you have a reference to look for the functions, and you know more or less how to place them, especially in the parts that I mention “replace” you simply have to replace the #ifdef ENABLE_XXX
 At the moment I am a little busy, but I will try to be updating everything, contributing things that I have forgotten and to try to help you with the problems that you arise, but I remember that simply it is a free “release” and that I am not expert in c++, reason why perhaps you have some different problems to me if you work with a different or modified base.
-Not to mention, make a backup of absolutely everything, having said that, good luck.
+Not to mention, make a backup of absolutely everything, having said that, good luck. 
