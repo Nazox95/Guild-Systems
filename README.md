@@ -12,3 +12,8 @@ Not to mention, make a backup of absolutely everything, having said that, good l
 
 #Edit:
 When I have some time, I will set aside my .cpp and .h files (the fragments) so you can see how the systems are placed, remember, that if you add this, it will give you a lot of problems because it is incomplete, I also recommend, that if you have any modifications in the python files of "uiguild" etc, you implement them after my files, since these will be some of the few that you will have to replace, (the others are few and will be with a guide)
+
+
+
+#EDIT 2 IMPORTANT:
+Don't be fooled by anyone, if you have any problems please let me know in a post on Metin2dev and I'll try to help you with whatever I can, if there's any code missing, or any imports, let me know and I'll update the post, it's possible that I've left something out, but I don't think you should pay anyone to offer you help, if someone like me has managed to make it work, it's not worth paying for a fix, obviously, it goes without saying, but if you have knowledge, I encourage you to develop it in a better way and expand the system, I hope you enjoy it :)
