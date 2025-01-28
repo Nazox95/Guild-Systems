@@ -1,0 +1,4 @@
+//Find 	ITEM_SKILLFORGET_VNUM = 70037, and add after
+#ifdef ENABLE_SKILL_FORGOT_BOOK
+	ITEM_SKILLFORGETGUILD_VNUM = 50341, //Olvido gremial
+#endif
