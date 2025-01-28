@@ -73,4 +73,3 @@ void CGuildManager::DeclareWar(DWORD guild_id1, DWORD guild_id2, BYTE bType)
 		}
 	}
 }
----------------------
