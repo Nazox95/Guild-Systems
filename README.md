@@ -17,3 +17,7 @@ When I have some time, I will set aside my .cpp and .h files (the fragments) so 
 
 #EDIT 2 IMPORTANT:
 Don't be fooled by anyone, if you have any problems please let me know in a post on Metin2dev and I'll try to help you with whatever I can, if there's any code missing, or any imports, let me know and I'll update the post, it's possible that I've left something out, but I don't think you should pay anyone to offer you help, if someone like me has managed to make it work, it's not worth paying for a fix, obviously, it goes without saying, but if you have knowledge, I encourage you to develop it in a better way and expand the system, I hope you enjoy it :)
+
+----------------------------------------------------------------------
+#EDIT3 IMPORTANT:
+Remember to create a backup, install the systems one by one, check and adapt if necessary, do not forget to visit the updates folder and if I forget something let me know, thank you.
