@@ -83,3 +83,10 @@ GUILD_TURMALIN_OVEN	Horno de Turmalina
 GUILD_WEAPON_BLACKSMITH	Herrero de Armas
 GUILD_ARMOR_BLACKSMITH	Herrero de Armaduras
 GUILD_JUWELER_BLACKSMITH	Herrero de Joyería
+
+//Update, find
+page.townSlot.SetText(self.MAP_NAME[local])
+page.worldSlot.SetText(self.EMPIRE_NAME_TO_MAPINDEX[local]) 
+//change with
+page.townSlot.SetText("test")
+page.worldSlot.SetText("")
