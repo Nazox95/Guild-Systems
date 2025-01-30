@@ -1,4 +1,4 @@
-//Replace all or find "name":"ExitCameraMode", and "name":"BuildGuildBuilding", :
+//Replace all or find "name":"ExitCameraMode", and "name":"BuildGuildBuilding", in uiscript folder
 
 import uiScriptLocale
 import app
