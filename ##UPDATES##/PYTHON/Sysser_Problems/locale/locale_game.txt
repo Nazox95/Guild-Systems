@@ -1,0 +1,85 @@
+//If you have problem like this:
+0130 18:28:42061 ::   File "uiGuild.py", line 3329, in RefreshGuildBaseInfoPage
+
+0130 18:28:42061 :: KeyError
+0130 18:28:42061 :: : 
+0130 18:28:42061 :: 352321611
+0130 18:28:42062 :: 
+
+//Or with this function (is the same problem)
+		def RefreshGuildBaseInfoPage(self):
+			if self.isLoaded==0:
+				return
+
+			page = self.pageWindow["BASE_INFO"]
+
+			local = guild.GetBaseInfo()
+			page.townSlot.SetText(self.MAP_NAME[local])
+
+			if local == 0:
+				page.worldSlot.SetText("")
+			else:
+				page.worldSlot.SetText(self.EMPIRE_NAME_TO_MAPINDEX[local])
+
+			altarLv, alchemist, blacksmith, storageLv = guild.GetbuildingInfo()
+
+			if altarLv == 0:	#Altar der Kraft LV.
+				page.powerlevelSlot.SetText("")
+			else:
+				page.powerlevelSlot.SetText('%d' % altarLv)
+
+			page.smelterSlot.SetText(self.SMELTER_NAME.get(alchemist,""))
+			page.factorySlot.SetText(self.GBLACKSMITH_NAME.get(blacksmith,""))
+
+			if storageLv == 0:
+				page.banklevelSlot.SetText("")
+			else:
+				page.banklevelSlot.SetText('%d' % storageLv)
+
+//Check if you have this in locale_game.txt, if u don't have add (check 1 for 1):
+
+MAP_A1	Área Yongan
+MAP_A3	Área Yayang
+MAP_AG	Jungrang
+GUILD_VILLAGE_01	Miryang
+MAP_B1	Área Joan
+MAP_B3	Área Bokjung
+MAP_BG	Waryong
+GUILD_VILLAGE_02	Songpa
+MAP_C1	Área Pyungmoo
+MAP_C3	Área Bakra
+MAP_CG	Imha
+GUILD_VILLAGE_03	Daeyami
+GUILDWAR_NORMAL_TITLE	Batalla de campo
+GUILDWAR_WARP_TITLE	Guerra en la arena
+GUILDWAR_CTF_TITLE	Lucha por bandera
+GUILDWAR_TYPE_DEFENSE	Lucha de escudos
+GUILDWAR_TYPE_TIGER	Lucha de destrucción
+GUILDWAR_TYPE_TIME	Ataque temporal
+GUILDWINDOW_LIST_EMPIRE_A	Shinsoo
+GUILDWINDOW_LIST_EMPIRE_B	Chunjo
+GUILDWINDOW_LIST_EMPIRE_C	Jinno
+EMPIRE_A	Reino Shinsoo
+EMPIRE_B	Reino Chunjo
+EMPIRE_C	Reino Jinno
+GUILD_DIAMANT_OVEN	Horno de Diamantes
+GUILD_FOSSIL_OVEN	Horno de Fosiles
+GUILD_COPPER_OVEN	Horno de Cobre
+GUILD_SILVER_OVEN	Horno de Plata
+GUILD_GOLD_OVEN	Horno de Oro
+GUILD_JADE_OVEN	Horno de Jade
+GUILD_EBONY_OVEN	Horno de Ébano
+GUILD_PEARL_OVEN	Horno de Perlas
+GUILD_WHITEGOLD_OVEN	Horno de Oro Bl.
+GUILD_KRISTALL_OVEN	Horno de Cristal
+GUILD_QUARZ_OVEN	Horno de Cuarzo
+GUILD_TEARS_OVEN	Horno L. Cielo
+GUILD_SOULCRISTAL_OVEN	Horno Cr. del Alma
+GUILD_RUBIN_OVEN	Horno de Rubí
+GUILD_GRANAT_OVEN	Horno de Granate
+GUILD_SMARAGD_OVEN	Horno de Esmeralda
+GUILD_SAPHIR_OVEN	Horno de Zafiro
+GUILD_TURMALIN_OVEN	Horno de Turmalina
+GUILD_WEAPON_BLACKSMITH	Herrero de Armas
+GUILD_ARMOR_BLACKSMITH	Herrero de Armaduras
+GUILD_JUWELER_BLACKSMITH	Herrero de Joyería
