@@ -1,0 +1,103 @@
+//Here you can find the lines i'm using in source.
+-------------------------------------------------------
+//LS LOCALE
+534	 Nadie está titulado para una guerra de gremios.
+2028	No puedes hacer esto porque el Líder está online.
+2029	Tienes poder sobre las guerras de gremio, ya que el Líder está Offline.
+2030	Solo puede haber un Líder y un General.
+1048	 El líder del gremio enemigo está desconectado.
+1317	 El líder del gremio está desconectado o se encuentra en otro mapa.
+2021	Necesitas un anillo de Sucesión para traspasar el gremio a otra persona.
+2022	Ya eres el Líder de este gremio.
+2023	Has dejado en otras manos tu gremio, buena suerte aventurero!
+2024	No tienes la autoridad para hacer esto.
+2025	No eres dueño de ninguna tierra para hacer esto!
+2026	Sólo puedes realizar esta acción en : %02d Hora(s) %02d Minuto(s) %02d Segundo(s)
+2027	¡Las tierras y los Edificios han sido eliminados!
+2028	No puedes hacer esto porque el Líder está online.
+2029	Tienes poder sobre las guerras de gremio, ya que el Líder está Offline.
+2030	Solo puede haber un Líder y un General.
+2031	Tienes que esperar unos segundos antes de utilizar esto.
+2032	No puedes donar más por hoy. ¡Ya has donado el límite máximo por día!.
+2033	No tienes los materiales necesarios.
+1926	¡Tienes que esperar 24h antes de poder donar al gremio!.
+2034	Has retirado %d yang y has recibido %d yang.
+2035	¡No eres miembro de ningún Gremio!.
+2036	Primero tienes que comprar el almacén de gremio.
+2037	No puedes abrir el almacén si tienes otras ventanas abiertas.
+2038	No tienes permisos para usar el almacén.
+2039	No puedes poner más de 2kkk de yang o ingresar más si ya estás cerca de esta cifra.
+2040	No puedes retirar más de 2kkk de yang.
+2041	No puedes retirar o ingresar más dinero del que hay en el banco de gremio.
+2042	Solicitud de gremio recibida por %s para unirse.
+2043	Alguien ha mandado una solicitud para unirse al gremio.
+2044	Su solicitud ha sido envíada correctamente al gremio %s.
+2045	Tu solicitud de envío para entrar al gremio.
+2046	 %s ya tiene un gremio!.
+2047	Necesitas estar en el mismo CH que el jugador %d.
+2048	El Líder está offline. Espera a que se conecte.
+2049	Tu reino no es el mismo al que pertenece el gremio: %s.
+2050	¡Ya perteneces a un gremio!.
+2051	Solicitud cancelada con éxito.
+2052	Tu solicitud del Gremio %s ha sido cancelada con éxito.
+2053	Su solicitud de cancelación al gremio %s ha sido envíada!.
+686	 Esta no es la cantidad correcta de Yang.
+687	 No tienes suficiente Yang.
+688	 La persona buscada no se puede encontrar.
+689	 Esta persona no está en el mismo gremio.
+690	 No puedes expulsar a los miembros del gremio.
+691	 El miembro del gremio %s ha sido expulsado del gremio.
+692	El evento OX no ha acabado aún. Han ocurrido varios errores. (Flag: %d)
+693	 Has expulsado a un miembro del gremio.
+694	 No puedes cambiar tu nombre de Rango.
+695	 Los Poderes del Líder del Gremio no se puede cambiar.
+696	 Este nombre de Rango es inválido.
+697	 No puedes cambiar tu posición.
+698	 Los derechos del líder del gremio no pueden cambiarse.
+699	 Aportada la experiencia de %u
+700	 Fallo de uso experiencia.
+701	 No hay suficiente yang en la caja del gremio.
+702	 El Dragón Fantasma no ha sido restablecido.
+703	En un breve espacio de tiempo, el evento OX será reiniciado.
+704	 No puedes hacer un anuncio.
+705	 No puedes cambiar la posición.
+706	 El Rango del Líder del Gremio no puede ser cambiado.
+707	 No puedes hacerte líder del gremio.
+708	 No puedes elegir el Líder del Gremio.
+709	 No puedes elegir más Líderes de Gremio.
+472	 El nombre del Gremio es inválido.
+473	 Este nombre de gremio ya está cogido.
+474	 No puedes crear un Gremio.
+475	¡El gremio %s le ha declarado la guerra al gremio %s!
+476	 %s rechazó la guerra de Gremio.
+477	¡La guerra entre %s y %s comenzará en pocos segundos!
+478	¡La guerra entre %s y %s ha comenzado!
+479	La guerra entre %s y %s ha terminado en empate.
+480	El gremio %s ha ganado la guerra contra el gremio %s.
+481	Para esto necesitas consentimiento de tu compañero.
+482	 La guerra de gremios ha sido cancelada.
+483	La guerra entre el gremio %s y el gremio %s ha sido cancelada.
+484	Cerrar
+485	Acción cancelada. Has entrado en una batalla.
+1554	Inténtalo de nuevo más tarde.
+927	Líder
+928	Miembro
+929	 La experiencia requerida es mayor que la experiencia que queda.
+930	 El mensaje no puede ser borrado.
+931	 No hay suficiente Dragón Fantasma. (%d, %d)
+932	 No puedes usar las habilidades del gremio todavía.
+933	 %d Habilidades usadas (%d, %d) a %u.
+934	 El jugador está en el ch %d. (ch actual: %d)
+935	 El jugador no está conectado.
+936	Tras 5 segundos, todo aquel que dió una respuesta errónea va a ser eliminado.
+937	 Esta habilidad de gremio sólo puede ser usada en guerra.
+938	 %u puntos Dragón Fantasma han sido restablecidos.
+939	 Sólo el Líder del Gremio puede sacar Yang.
+940	 El jugador rechaza la invitación al gremio.
+941	 No puedes invitar a nadie al gremio.
+942	 No puedes invitar a jugadores de otro reino al gremio.
+943	 Puedes volver a invitar a este jugador dentro de %d día(s).
+944	 Despues de la reorganización puedes invitar miembros de nuevo tras %d días.
+945	 Esta persona ya es miembro de otro gremio.
+946	 La capacidad del gremio llegó a su límite máximo.
+841	No puedes usar un almacén privado ahora.
