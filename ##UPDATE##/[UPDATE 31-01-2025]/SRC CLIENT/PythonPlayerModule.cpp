@@ -9,3 +9,8 @@ PyObject* playerSetParalysis(PyObject* poSelf, PyObject* poArgs)
 	return Py_BuildNone();
 }
 #endif
+
+//Now add in void init
+#ifdef ENABLE_SECOND_GUILDRENEWAL_SYSTEM
+		{ "SetParalysis",		playerSetParalysis,		METH_VARARGS },
+#endif
