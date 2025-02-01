@@ -1,0 +1,216 @@
+quest smelter begin
+	state start begin
+		function GetOreRefineCost(cost)
+			if pc.empire ~= npc.empire then
+				return 3 * cost
+			end
+			if pc.get_guild() == npc.get_guild() then
+				return cost * 0.9
+			end
+			return cost
+		end
+
+		function GetOreRefineGoodPct()
+			return 60
+		end
+
+		function GetOreRefineBadPct()
+			return 30
+		end
+
+		function GetMyRefineNum(race)
+			return race - 20060 + 50601 --Alquimista Diamante - Piedra Diamante
+		end
+
+		function IsRefinableRawOre(vnum)
+			return vnum >= 50601 and vnum <= 50619 --Piedra Diamante - Mineral de turmalina
+		end
+
+		function DoRefineDiamond(pct)
+			local from_postfix
+			local from_name = item_name(item.vnum)
+			local to_vnum = item.vnum + 20
+			local to_name = item_name(to_vnum)
+			local to_postfix
+
+			say("Un Diamante puede ser fabricado con 100 Piedras[ENTER]Diamante.") --1643
+
+			if item.count >= 100 then
+				say(string.format("La probabilidad de éxito es de %s.[ENTER]Necesitas %s Yang.[ENTER]¿Quieres intentarlo?", pct, guild_building_melt.GetOreRefineCost(10000))) --1653
+				local s =  select("Sí	", "No")
+				if s == 1 then
+					if pc.get_gold() < guild_building_melt.GetOreRefineCost(10000) then
+						say("Necesitas más Yang.") --1664
+						return
+					end
+					if pc.diamond_refine(10000, pct) then
+						say("Felicidades, el proceso de refinamiento ha tenido[ENTER]éxito.[ENTER]Ahora tienes:") --1671
+						say_item(to_name, to_vnum, "")
+					else
+						say("El proceso de refinamiento no ha tenido éxito.") --1672
+					end
+				end
+			else
+				say(string.format("No tienes todavía 100 %s.",from_name)) --1673
+			end
+		end
+
+		function DoRefine(pct)
+			local from_postfix
+			local from_name = item_name(item.vnum)
+			local to_vnum = item.vnum + 20
+			local to_name = item_name(to_vnum)
+			local to_postfix
+
+			say(string.format("Fabrica %s con:[ENTER]+ 100 %s[ENTER]+ Piedra espíritu (+0, +1, +2 o +3)", from_name, to_name)) --1674
+			if item.count >= 100 then
+				say(string.format("La probabilidad de éxito es de %s.[ENTER]Necesitas %s Yang.[ENTER]¿Quieres intentarlo?", pct, guild_building_melt.GetOreRefineCost(3000))) --1653
+				local s =  select("Sí	", "No")
+				if s == 1 then
+					if pc.get_gold() < guild_building_melt.GetOreRefineCost(3000) then
+						say("Necesitas más Yang.") --1664
+						return
+					end
+					local selected_item_cell = select_item()
+					if selected_item_cell == 0 then
+						say("No puedo producir el objeto sin una piedra alma.") --1675
+						return
+					end
+					local old_item = item.get_id()
+					if (not item.select_cell(selected_item_cell)) or item.vnum < 28012 or item.vnum > 28345 then --Piedra contra Lícanos+0 - Piedra rompemagia+3
+						say("Sólo puedes usar piedras de +0 a +3") --??
+						return
+					end
+
+					item. select(old_item , old_item)
+
+					if pc.ore_refine(3000, pct, selected_item_cell) then
+						say("Felicidades, el proceso de refinamiento ha tenido[ENTER]éxito.[ENTER]Ahora tienes:") --1671
+						say_item(to_name, to_vnum, "")
+					else
+						say("El proceso de refinamiento no ha tenido éxito.") --1672
+					end
+				end
+			else
+				say(string.format("No tienes todavía 100 %s.",from_name)) --1673
+			end
+		end
+
+		when
+			20060.take or --Alquimista Diamante
+			20061.take or --Alquimista Ámbar
+			20062.take or --Alquimista Madera Fósil
+			20063.take or --Alquimista Cobre
+			20064.take or --Alquimista Plata
+			20065.take or --Alquimista Oro
+			20066.take or --Alquimista Jade
+			20067.take or --Alquimista Ébano
+			20068.take or --Alquimista Perla
+			20069.take or --Alquimista Oro Blanco
+			20070.take or --Alquimista Cristal
+			20071.take or --Alquimista Amatista
+			20072.take or --Alquimista Lágrima Cielo
+			20423.take or --Alq. de cristal del alma
+			20424.take or --Alquimista de rubí
+			20425.take or --Alquimista de granate
+			20426.take or --Alquimista de esmeralda
+			20427.take or --Alquimista de zafiro
+			20428.take --Alquimista de turmalina
+			with guild_building_melt.GetMyRefineNum(npc.race) == item.vnum
+		begin
+			if item.vnum == 50601 then --Piedra Diamante
+				guild_building_melt.DoRefineDiamond(guild_building_melt.GetOreRefineGoodPct())
+			else
+				guild_building_melt.DoRefine(guild_building_melt.GetOreRefineGoodPct())
+			end
+		end
+
+		when
+			20060.take or --Alquimista Diamante
+			20061.take or --Alquimista Ámbar
+			20062.take or --Alquimista Madera Fósil
+			20063.take or --Alquimista Cobre
+			20064.take or --Alquimista Plata
+			20065.take or --Alquimista Oro
+			20066.take or --Alquimista Jade
+			20067.take or --Alquimista Ébano
+			20068.take or --Alquimista Perla
+			20069.take or --Alquimista Oro Blanco
+			20070.take or --Alquimista Cristal
+			20071.take or --Alquimista Amatista
+			20072.take or --Alquimista Lágrima Cielo
+			20423.take or --Alq. de cristal del alma
+			20424.take or --Alquimista de rubí
+			20425.take or --Alquimista de granate
+			20426.take or --Alquimista de esmeralda
+			20427.take or --Alquimista de zafiro
+			20428.take --Alquimista de turmalina
+			with guild_building_melt.IsRefinableRawOre(item.vnum)
+			and  guild_building_melt.GetMyRefineNum(npc.race) ~= item.vnum
+		begin
+			if item.vnum == 50601 then --Piedra Diamante
+				guild_building_melt.DoRefineDiamond(guild_building_melt.GetOreRefineBadPct())
+			else
+				guild_building_melt.DoRefine(guild_building_melt.GetOreRefineBadPct())
+			end
+		end
+
+		when
+			20060.click or --Alquimista Diamante
+			20061.click or --Alquimista Ámbar
+			20062.click or --Alquimista Madera Fósil
+			20063.click or --Alquimista Cobre
+			20064.click or --Alquimista Plata
+			20065.click or --Alquimista Oro
+			20066.click or --Alquimista Jade
+			20067.click or --Alquimista Ébano
+			20068.click or --Alquimista Perla
+			20069.click or --Alquimista Oro Blanco
+			20070.click or --Alquimista Cristal
+			20071.click or --Alquimista Amatista
+			20072.click or --Alquimista Lágrima Cielo
+			20423.click or --Alq. de cristal del alma
+			20424.click or --Alquimista de rubí
+			20425.click or --Alquimista de granate
+			20426.click or --Alquimista de esmeralda
+			20427.click or --Alquimista de zafiro
+			20428.click --Alquimista de turmalina
+			with npc.get_guild() == pc.get_guild() and pc.isguildmaster()
+		begin
+			say("Si tienes 3.000.000 Yang, puedes contratar a otro[ENTER]alquimista.") --1646
+			if pc.get_gold() < 3000000 then
+				say("No tienes 3.000.000 Yang.") --1647
+			else
+				say("Para cambiar, selecciona una especialización:") --1648
+				local sel = 0
+				local timetable1 = {"Diamantes", "Fósiles", "Cobre", "Plata", "Oro", "Jade", "Ébano", "Cerrar"} --1651 ~ 1658 - 1650
+				local valuetable1 = {14043, 14045, 14046, 14047, 14048, 14049, 0, -1}
+
+				local timetable2 = {"Ébano", "Perla", "Oro Blanco", "Cristal", "Amatista", "Lágrima de Cielo", "Cerrar", "Cerrar"} --1658 ~ 1663 - 1650 - 1650
+				local valuetable2 = {14050, 14051, 14052, 14053, 14054, 14055, 0, -1}
+
+				-- local timetable3 = {"Rubí", "Granate", "Esmeralda", "Zafiro", "Turmalina", "Cerrar", "Cerrar"} --1666 ~ 1670 - 1650 - 1650
+				-- local valuetable3 = {14056, 14057, 14058, 14059, 14060, 0, -1}
+
+				repeat
+				local s = select_table(timetable1)
+				sel = valuetable1[s]
+				if sel == 0 then
+					local s = select_table(timetable2)
+					sel = valuetable2[s]
+				end
+				until sel ~= 0
+				if sel ~= -1 then
+					npc_num = sel + 20060 - 14043
+					if npc_num == npc.get_race() then
+						say("Esta especialización ya está activa.") --1649
+					else
+						pc.changegold(-3000000)
+						building.reconstruct(sel)
+					end
+				end
+			end
+		end
+	end
+end
+
